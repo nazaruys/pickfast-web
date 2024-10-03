@@ -3,7 +3,14 @@ import { XMarkIcon, ArrowDownIcon, GiftIcon } from '@heroicons/react/24/outline'
 import FAQList from './components/FAQList';
 
 export default function Home() {
-	const faqItems = [['How to add a new product?', 'Bla bla la la lal al al la la la la llala la al.'], ['What do i get exactly?', 'An app.)'], ['Is it completly free?', 'Yes bla bla bla lbal.'], ['Can i get a refund?', 'Hello es sdj ajs da lorem ipsum.']]
+	const faqItems = [
+		['How is PickFast better than other shopping list apps?', '🍊PickFast offers a simpler and more customizable experience. You can mark items with a single click and name them however you prefer!'],
+		['Is it completely free?', 'Yes! The app is completely free to use 😀'],
+		['How do I share my list with family members?', 'Family members can join your group by entering a 6-character code that you provide.'],
+		['How many people can join my group?', 'There is no limit! You can invite family, friends, or anyone else you wish to share your list with.'],
+		['Can I prioritize products?', 'Yes, you can set and later edit the priority of each product according to your preferences.']
+	];
+	
     return (
 	<>
 		<div className="bg-cyan-50 px-8 md:px-36 py-1 min-h-screen">
@@ -82,8 +89,7 @@ export default function Home() {
 				<div className="md:w-1/2 flex flex-col">
 					<h1 className="text-4xl tracking-tighter font-extrabold mb-6">Frequently Asked Questions</h1>
 					<p>
-						More questions? Contact <a href="#" className="link font-bold">support</a>
-						, or <a href="mailto:support@pick-fast.com" className="link font-bold">send email</a>.
+						More questions? Contact <a href="mailto:support@pick-fast.com" className="link font-bold">support</a>.
 					</p>
 				</div>
 
@@ -104,7 +110,7 @@ export default function Home() {
 						<img src="/logo.png" alt="PickFast Logo" className="w-auto h-20" />
 						</a>
 						<p className="text-sm text-base-content/80 leading-relaxed">
-						Shop smarter, pick faster
+						Shop smarter, pick faster<br />Copyright © 2024 - All rights reserved
 						</p>
 					</div>
 
@@ -114,8 +120,8 @@ export default function Home() {
 							<h3 className="footer-title font-semibold text-base-content tracking-widest text-sm mb-3">LINKS</h3>
 							<ul className="flex flex-col justify-center items-center md:items-start gap-2 text-sm">
 								<li><a href="https://github.com/nazaruys/pickfast-app" target="_blank" className="link link-hover">Project on GitHub</a></li>
-								<li><a href="#" className="link link-hover">Support</a></li>
-								<li><a href="#" className="link link-hover">Delete account</a></li>
+								<li><a href="mailto:support@pick-fast.com" className="link link-hover">Support</a></li>
+								<li><a href="/delete-account" className="link link-hover">Delete account</a></li>
 							</ul>
 						</div>
 
