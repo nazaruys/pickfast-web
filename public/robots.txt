@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pick-fast.com
+
+# Sitemaps
+Sitemap: https://pick-fast.com/sitemap.xml
