@@ -1,6 +1,7 @@
 "use client";
 import { XMarkIcon, ArrowDownIcon, GiftIcon } from '@heroicons/react/24/outline';
 import FAQList from './components/FAQList';
+import EmailCollecter from './components/EmailCollecter';
 
 export default function Home() {
 	const faqItems = [
@@ -11,6 +12,27 @@ export default function Home() {
 		['Can I prioritize products?', 'Yes, you can set and later edit the priority of each product according to your preferences.']
 	];
 	
+	const handleEmailSubmit = async (email) => {
+		try {
+			const response = await fetch('/add-to-email-list', {
+				method: 'POST',
+				headers: {
+				'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ email }),
+			});
+		
+			if (!response.ok) {
+				throw new Error(`Error: ${response.statusText}`);
+			}
+		
+			const data = await response.json();
+			console.log('Email added successfully:', data);
+		} catch (error) {
+			console.error('Failed to add email:', error);
+			}
+	  };
+	  
     return (
 	<>
 		<div className="bg-cyan-50 px-4 md:px-36 py-1 min-h-screen">
@@ -18,7 +40,6 @@ export default function Home() {
 			<div className="mb-8 pl-4 md:pl-10">
 				<img src="/logo.png" alt="PickFast Logo" className="w-auto h-16 md:h-20" />
 			</div>
-
 			<div className="flex flex-col md:flex-row justify-center">
 				{/* Right: Title, Subtitle, Google Play Link */}
 				<div className="w-full md:w-1/2 text-center md:text-left">
@@ -38,14 +59,15 @@ export default function Home() {
 					</p>
 					
 					{/* Google Play Badge with link */}
-					<a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="pointer-events-none opacity-60">
+					{/* <a href="https://play.google.com/store/apps/details?id=com.pickfast.pickfast" target="_blank" rel="noopener noreferrer">
 						<img src="/get-it-on-google-play.png" alt="Get it on Google Play" className="w-48 md:w-56 h-auto mx-auto md:mx-0" />
-					</a>
+					</a> */}
+					<EmailCollecter onSubmit={handleEmailSubmit} />
 
 					{/* Small Gift Icon and Text Below the Google Play Button */}
 					<div className="flex justify-center md:justify-start items-center mt-4 text-green-600 text-base">
 						<GiftIcon className="w-6 h-6 mr-2" />
-						<p>Shop with ease for free!</p>
+						<p>Submit your email and get your early access for free! </p>
 					</div>
 
 					{/* Blue Box with X Icon and Text */}
