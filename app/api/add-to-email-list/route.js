@@ -1,3 +1,4 @@
+"use client";
 import { NextResponse } from 'next/server';
 import { db } from '../../../firebase'; // Adjust based on your actual path
 import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
