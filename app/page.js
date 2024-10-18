@@ -14,7 +14,7 @@ export default function Home() {
 	
 	const handleEmailSubmit = async (email) => {
 		try {
-			const response = await fetch('/add-to-email-list', {
+			const response = await fetch('/api/add-to-email-list', {
 				method: 'POST',
 				headers: {
 				'Content-Type': 'application/json',
