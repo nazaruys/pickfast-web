@@ -1,23 +1,25 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import admin from 'firebase-admin';
+import serviceAccount from './serviceAccountKey.json'; // Adjust the path
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-  };
-  
+// Ensure Firebase is only initialized once
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      type: serviceAccount.type,
+      project_id: serviceAccount.project_id,
+      private_key_id: serviceAccount.private_key_id,
+      private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Replace \n characters in private key
+      client_email: serviceAccount.client_email,
+      client_id: serviceAccount.client_id,
+      auth_uri: serviceAccount.auth_uri,
+      token_uri: serviceAccount.token_uri,
+      auth_provider_x509_cert_url: serviceAccount.auth_provider_x509_cert_url,
+      client_x509_cert_url: serviceAccount.client_x509_cert_url,
+      universe_domain: serviceAccount.universe_domain
+    }),
+  });
+}
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = admin.firestore();
+
+export { db };

@@ -14,24 +14,24 @@ export default function Home() {
 	
 	const handleEmailSubmit = async (email) => {
 		try {
+			console.log("Submitting email to API...");
 			const response = await fetch('/api/add-to-email-list', {
 				method: 'POST',
 				headers: {
-				'Content-Type': 'application/json',
+					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ email }),
+				body: JSON.stringify({email: email}),
 			});
-		
+			
 			if (!response.ok) {
 				throw new Error(`Error: ${response.statusText}`);
 			}
-		
-			const data = await response.json();
-			console.log('Email added successfully:', data);
+	
 		} catch (error) {
 			console.error('Failed to add email:', error);
-			}
-	  };
+		}
+	};
+	
 	  
     return (
 	<>

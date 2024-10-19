@@ -12,8 +12,10 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "firebase": "^10.14.1",
+    "firebase-admin": "^12.6.0",
     "next": "14.2.13",
     "next-sitemap": "^4.2.3",
+    "opentelemetry": "^0.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
