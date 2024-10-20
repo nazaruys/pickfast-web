@@ -28,7 +28,9 @@ const EmailCollecter = ({ placeholder = "Your email here", buttonText = "Get Ear
       </div>
       <button
         type="submit"
-        className={`mx-4 rounded-sm px-6 py-2 basis-1/2 transition-transform duration-300 transform ${isSubmitting ? 'bg-gray-400 text-gray-700' : 'bg-green-500 text-white font-semibold hover:-translate-y-[0.1rem]'}`}
+        className={`mx-4 rounded-sm py-2 basis-1/2 transition-transform duration-300 transform 
+                    ${isSubmitting ? 'bg-gray-400 text-gray-700' : 'bg-green-500 text-white font-semibold hover:-translate-y-[0.1rem]'} 
+                    text-sm sm:text-base`} // Adjust font size for small and larger screens
         disabled={isSubmitting} // Disable button when submitting
       >
         {isSubmitting ? 'Email sent' : buttonText} {/* Change button text */}
