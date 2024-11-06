@@ -30,7 +30,7 @@ export default function FAQList({ faqItems }) {
                 className={`flex tracking-tight items-center w-full text-left font-semibold text-xl ${openIndexes.includes(index) ? 'text-orange-500' : 'text-base-content'}`}
                 aria-expanded={openIndexes.includes(index) ? 'true' : 'false'}
               >
-                <span className={`flex-1 ${openIndexes.includes(index) ? 'text-orange-500' : 'text-base-content'}`}>
+                <span className={`text-black flex-1 ${openIndexes.includes(index) ? 'text-orange-500' : 'text-base-content'}`}>
                   {item[0]}
                 </span>
 

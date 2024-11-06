@@ -22,7 +22,7 @@ const EmailCollecter = ({ placeholder = "Your email here", buttonText = "Get Ear
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={placeholder}
-          className="pl-10 py-5 w-full h-full focus:outline-none"
+          className="pl-10 py-5 w-full h-full focus:outline-none bg-white"
           required
         />
       </div>

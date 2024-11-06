@@ -35,7 +35,7 @@ export default function Home() {
 	  
     return (
 	<>
-		<div className="bg-cyan-50 px-4 md:px-36 py-1 min-h-screen">
+		<div className="bg-cyan-50 px-4 md:px-36 py-1 min-h-screen text-black">
 			{/* Logo */}
 			<div className="mb-8 pl-4 md:pl-10">
 				<img src="/logo.png" alt="PickFast Logo" className="w-auto h-16 md:h-20" />
@@ -117,13 +117,13 @@ export default function Home() {
 				</div>
 
 				{/* Right: FAQ Section */}
-				<div className="md:w-1/2">
+				<div className="md:w-1/2 text-black">
 					<FAQList faqItems={faqItems} />
 				</div>
 			</div>
 		</div>
 
-		<footer className="bg-cyan-50 border-t">
+		<footer className="bg-cyan-50 border-t text-black">
 			<div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-16 pb-24 md:pb-32">
 				<div className="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col text-center md:text-left">
 				{/* Left: PickFast Logo and Subtitle */}
@@ -131,7 +131,7 @@ export default function Home() {
 					<a href="/#" aria-current="page" className="flex gap-2 justify-center md:justify-start items-center">
 					<img src="/logo.png" alt="PickFast Logo" className="w-auto h-16 md:h-20" />
 					</a>
-					<p className="text-sm text-base-content/80 leading-relaxed mt-4">
+					<p className="text-black text-sm text-base-content/80 leading-relaxed mt-4">
 					Shop smarter, pick faster<br />
 					Copyright © 2024 - All rights reserved
 					</p>
@@ -140,7 +140,7 @@ export default function Home() {
 				{/* Links Section */}
 				<div className="flex-grow flex flex-wrap justify-center md:justify-start md:pl-24 -mb-10 md:mt-0 mt-10">
 					<div className="lg:w-1/3 md:w-1/2 w-full px-4 mb-10 md:mb-0">
-					<h3 className="footer-title font-semibold text-base-content tracking-widest text-sm mb-3">LINKS</h3>
+					<h3 className="footer-title font-semibold text-black tracking-widest text-sm mb-3">LINKS</h3>
 					<ul className="flex flex-col justify-center items-center md:items-start gap-2 text-sm">
 						<li><a href="https://github.com/nazaruys/pickfast-app" target="_blank" className="link link-hover">Project on GitHub</a></li>
 						<li><a href="mailto:support@pick-fast.com" className="link link-hover">Support</a></li>
@@ -150,7 +150,7 @@ export default function Home() {
 
 					{/* Legal Section */}
 					<div className="lg:w-1/3 md:w-1/2 w-full px-4 mb-10 md:mb-0">
-					<h3 className="footer-title font-semibold text-base-content tracking-widest text-sm mb-3">LEGAL</h3>
+					<h3 className="footer-title font-semibold text-black tracking-widest text-sm mb-3">LEGAL</h3>
 					<ul className="flex flex-col justify-center items-center md:items-start gap-2 text-sm">
 						<li><a href="/privacy-policy" className="link link-hover">Privacy Policy</a></li>
 						<li><a href="/tac" className="link link-hover">Terms & Conditions</a></li>
@@ -159,7 +159,7 @@ export default function Home() {
 
 					{/* About Maker Section */}
 					<div className="lg:w-1/3 md:w-1/2 w-full px-4 mb-10 md:mb-0">
-					<h3 className="footer-title font-semibold text-base-content tracking-widest text-sm mb-3">ABOUT MAKER</h3>
+					<h3 className="footer-title font-semibold text-black tracking-widest text-sm mb-3">ABOUT MAKER</h3>
 					<ul className="flex flex-col justify-center items-center md:items-start gap-2 text-sm">
 						<li><a href="https://github.com/nazaruys" target="_blank" className="link link-hover">GitHub</a></li>
 						<li><a href="https://x.com/nazar_yakov" target="_blank" className="link link-hover">Twitter</a></li>
